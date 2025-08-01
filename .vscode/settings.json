@@ -1,0 +1,10 @@
+{
+  "code-runner.runInTerminal": true,
+  "code-runner.clearPreviousOutput": true,
+  "code-runner.preserveFocus": false,
+  "terminal.integrated.defaultProfile.windows": "Command Prompt",
+  "terminal.integrated.focus": true,
+  "code-runner.executorMap": {
+    "java": "cd $dir && javac $fileName && java $fileNameWithoutExt"
+  }
+}
