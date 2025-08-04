@@ -2,8 +2,8 @@ package ngay6;
 
 public class student {
      // class attributes
-    String name;
-    int age;
+    private String name;
+    private int age;
     public student(){
 
     }
@@ -20,6 +20,15 @@ public class student {
         //this là cái class ở trên thui;
         this.age = age1;
     }
+    public String getName(){
+        return "nhan vat bi an: " + this.name;
+    }
+    public int getAge(){
+        return this.age;
+    }
+    public void setName(String name1){
+                this.name = name1;
+    }
     // //Nguyên tắc lạc đà 
     // String fullName;
     // String emailAddress;
@@ -30,9 +39,4 @@ public class student {
     void learnjava(int a){
         System.out.println("learn java with b1ngb1ng!");
     }
-    String getAge(){
-        // return 25;
-        return "hoi dan IT";
-    }
-    // void chỉ in ra thui 
 }

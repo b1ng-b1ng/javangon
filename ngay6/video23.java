@@ -6,6 +6,5 @@ public class video23 {
     }
     public static void main(String[] args) {
         student st1 = new student(); // constructor
-        st1.age = 0;
     }
 }
