@@ -1,7 +1,5 @@
 package ngay11;
 
-import ngay6.student;
-
 public class student2 {
     @Override
     public String toString(){
