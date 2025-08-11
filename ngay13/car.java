@@ -1,5 +1,5 @@
 package ngay13;
-
+// extends 
 public class car extends vehicle {
     private String modelName = "Mustang";
     public static void main(String[] args) {
