@@ -1,22 +1,27 @@
 package ngay14;
 
 public class SinhvienIT extends Sinhvien {
-    private String language;
-    public String getLanguage() {
-        return language;
+    private double diemJava ;
+    public SinhvienIT(double diemJava, double diemHTML) {
+        this.diemJava = diemJava;
+        this.diemHTML = diemHTML;
     }
-    public void setLanguage(String language) {
-        this.language = language;
+    private double diemHTML;
+    public double getDiemJava() {
+        return diemJava;
     }
-    public SinhvienIT(String language,String id, String name, double price, double tax){
-        super(id,name,price,tax);
-        this.language = language;
+    public void setDiemJava(double diemJava) {
+        this.diemJava = diemJava;
     }
-    public void getMoney(){
-        System.out.println("Run get money");
-        this.info();
+    public double getDiemHTML() {
+        return diemHTML;
     }
-    public void info(){
-        System.out.println("run info from SinhvienIT");
+    public void setDiemHTML(double diemHTML) {
+        this.diemHTML = diemHTML;
     }
+    @Override
+    double getDiem(){
+        return (this.diemHTML*2 + this.diemHTML)/3;
+    }
+   
 }
