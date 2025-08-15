@@ -7,6 +7,5 @@ public class video42 {
     System.out.println(it1.getDiem());
         Sinhvien cokhi1 = new SinhvienCoKhi(5, 5);
         System.out.println(cokhi1.getDiem());
-
     }
 }
