@@ -7,8 +7,8 @@ public class sudung {
         student st2 = new student("tuan", "caobang", "toan", "cntt1");
         teacher gv1 = new teacher("mai", "hanoi", "toan", "gvCN");
         CLASS lop = new CLASS("L03", gv1);
-        lop.studentList.add(st1);
-        lop.studentList.add(st2);
+        lop.addSv(st1);
+        lop.addSv(st2);
         lop.printList();
     }
 }

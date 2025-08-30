@@ -12,15 +12,17 @@ public class CLASS {
         this.name = name;
         this.advisor = advisor;
     }
-
+    public void addSv(student st){
+        studentList.add(st);
+        numOfStudent++;
+    }
     public void printList(){
-        numOfStudent = studentList.size();
         System.out.println("lop: " + name );
         System.out.println("giao vien chu nhiem: " + advisor.name);
         System.out.println("danh sach sinh vien: ");
         for (int i = 0; i < numOfStudent; i++) {
             student st = studentList.get(i);
-            System.out.println("-" + st.name + "|" + st.address + "|" + st.department);
+            System.out.println("-ten: " + st.name + "| que quan: " + st.address + "| bo mon: " + st.department);
         }
     }
 }
