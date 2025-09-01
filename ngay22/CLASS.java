@@ -4,25 +4,22 @@ import java.util.ArrayList;
 
 public class CLASS {
     private String name;
-    public ArrayList<student> studentList = new ArrayList<>();
-    private int numOfStudent;
+    ArrayList<student> studentList = new ArrayList<>();
     private teacher advisor;
-
     public CLASS(String name, teacher advisor) {
         this.name = name;
         this.advisor = advisor;
     }
-    public void addSv(student st){
-        studentList.add(st);
+    private int numOfStudent;
+    public void addstudent(student s){
+        studentList.add(s);
         numOfStudent++;
     }
     public void printList(){
-        System.out.println("lop: " + name );
-        System.out.println("giao vien chu nhiem: " + advisor.name);
-        System.out.println("danh sach sinh vien: ");
-        for (int i = 0; i < numOfStudent; i++) {
-            student st = studentList.get(i);
-            System.out.println("-ten: " + st.name + "| que quan: " + st.address + "| bo mon: " + st.department);
+        System.out.println("ten lop: " + name);
+        System.out.println("ten giao vien: " + advisor.getName());
+        for(student s : studentList){
+            System.out.println("ten: " + s.getName() + "|dia chi: " + s.getAddress() + "|mon hoc: " + s.getDepartment());
         }
     }
 }
