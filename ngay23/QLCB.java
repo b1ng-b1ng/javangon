@@ -6,24 +6,11 @@ import java.util.Scanner;
 public class QLCB {
     private ArrayList<Canbo> ds = new ArrayList<>();
     private Scanner sc = new Scanner(System.in);
-    public void nhap(){
-        System.out.print("nhap ten: ");
-        String ten = sc.nextLine();
-        System.out.print("nhap ngay sinh: ");
-        String ns = sc.nextLine();
-        System.out.print("gioi tinh: ");
-        String sex = sc.nextLine();
-        System.out.print("dia chi: ");
-        String address = sc.nextLine();
-        Canbo cb = new Canbo(ten, ns, sex, address);
-        ds.add(cb);
+    public QLCB(){
+        ds = new ArrayList<>();
+        sc = new Scanner(System.in);
     }
-    public void in(){
-        System.out.println("Danh sach can bo ne: ");
-        for (Canbo canbo : ds) {
-            System.out.println("|Ten: "+ canbo.getTen() + "|Ngay sinh: " + canbo.getNs() + "|Gioi tinh: " +canbo.getSex() +"|Dia chi: " + canbo.getAddress() +"|");
-        }
-    }
+
     public void find(String name){
         boolean tim = false;
         for (Canbo canbo : ds) {
@@ -36,38 +23,46 @@ public class QLCB {
                 System.out.println("Khong tim thay Can bo: " + name);
             }
     }
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        QLCB ql = new QLCB();
-        System.out.println("Q5uan ly can bo");
-        System.out.println("1.Nhap thong tin can bo");
-        System.out.println("2.In ra thong tin can bo");
-        System.out.println("3.Tim thong tin Can bo theo ten");
-        System.out.println("4.Thoat chuong trinh!");
+    public void nhap() {
+        System.out.println("Chon loai Can bo: ");
+        System.out.println("1.Cong nhan");
+        System.out.println("2.Ky su");
+        System.out.println("3.Nhan vien");
         int lc;
-        while (true) {
         System.out.print("nhap lua chon cua ban:");
         lc = sc.nextInt();
         sc.nextLine();
-        if(lc == 1){
-            ql.nhap();
+        System.out.print("nhap ten: ");
+        String ten = sc.nextLine();
+        System.out.print("nhap nam sinh:");
+        int ns = sc.nextInt();
+        sc.nextLine();
+        System.out.print("nhap gioi tinh:");
+        String sex = sc.nextLine();
+        System.out.print("nhap dia chi:");
+        String address = sc.nextLine();
+        Canbo cb = null;
+switch (lc) {
+    case 1: cb = new Congnhan(); break;
+    case 2: cb = new Kysu(); break;
+    case 3: cb = new Nhanvien(); break;
+    default: 
+    System.out.println("Lua chon khong hop le!");
+    return;
+}
+    if(cb != null){
+        cb.nhap(sc);
+        ds.add(cb);
+    }
+}
+    public void inds(){
+        if(ds.isEmpty()){
+            System.out.println("Danh sach rong!");
         }
-        else if(lc == 2){
-            ql.in();
+        System.out.println("Danh sach can bo");
+        for (int i = 0; i < ds.size(); i++) {
+            Canbo cb = ds.get(i);
+            System.out.println((i+1)+". " + cb);
         }
-        else if(lc == 3){
-            System.out.print("nhap ten can tim: ");
-            String ten = sc.nextLine();
-            ql.find(ten);
-        }
-        else if(lc == 4){
-            System.out.println("Thoat chuong trinh!");
-            break;
-        }
-        else{
-          System.out.println("Lua chon khong hop le");  
-        }
-        }
-        sc.close();
     }
 }
