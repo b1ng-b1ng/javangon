@@ -5,6 +5,18 @@ public class Canbo {
     private String ns;
     private String sex;
     private String address;
+    public String getTen() {
+        return ten;
+    }
+    public String getNs() {
+        return ns;
+    }
+    public String getSex() {
+        return sex;
+    }
+    public String getAddress() {
+        return address;
+    }
     public Canbo(){
         
     }
