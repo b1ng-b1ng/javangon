@@ -32,11 +32,11 @@ public class tailieu {
     }
     public void nhap(Scanner sc){
         System.out.print("nhap ma tai lieu: ");
-        matl = sc.nextLine();
+        this.matl = sc.nextLine();
         System.out.print("Nhap ten nha xuat ban:");
-        nameNxb = sc.nextLine();
+        this.nameNxb = sc.nextLine();
         System.out.print("Nhap So ban phat hanh:");
-        soBan = sc.nextInt();
+        this.soBan = sc.nextInt();
         sc.nextLine();
     }
     public void in(){

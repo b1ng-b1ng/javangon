@@ -40,7 +40,7 @@ public class lab61 {
                 System.out.println("Lua chon khong hop le! Vui long chon 1-4.");
                     break;
             }
-        }while(lc != 3);
+        }while(lc != 4);
         nhap.close();
     }
 }

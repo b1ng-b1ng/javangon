@@ -17,10 +17,10 @@ public class tapchi extends tailieu {
     public void nhap(Scanner sc){
         super.nhap(sc);
         System.out.print("Nhap so phat hanh:");
-        soPhathanh = sc.nextInt();
+        this.soPhathanh = sc.nextInt();
         sc.nextLine();
         System.out.print("Nhap thang phat hanh:");
-        thangPhathanh = sc.nextLine();
+        this.thangPhathanh = sc.nextLine();
     }
     @Override
     public void in(){

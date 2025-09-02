@@ -15,7 +15,7 @@ public class bao extends tailieu{
     public void nhap(Scanner sc){
         super.nhap(sc);
         System.out.print("Nhap ngay phat hanh: ");
-        ngayPhathanh = sc.nextLine();
+        this.ngayPhathanh = sc.nextLine();
     }
     @Override
     public void in(){

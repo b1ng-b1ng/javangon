@@ -17,9 +17,9 @@ public class sach extends tailieu {
     public void nhap(Scanner sc){
         super.nhap(sc);
         System.out.print("Nhap ten tac gia:");
-        nameTG = sc.nextLine();
+        this.nameTG = sc.nextLine();
         System.out.print("Nhap so trang:");
-        soTrang = sc.nextInt();
+        this.soTrang = sc.nextInt();
         sc.nextLine();
     }
     @Override
