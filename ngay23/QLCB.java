@@ -42,7 +42,7 @@ switch (lc) {
     System.out.println("Lua chon khong hop le!");
     return;
 }
- cb.nhap(sc);
+cb.nhap(sc);
 ds.add(cb);
 }
     public void inds(){

@@ -1,0 +1,35 @@
+package ngay24;
+
+import java.util.Scanner;
+
+public class lab61 {
+    public static void main(String[] args) {
+        qlySach ql = new qlySach();
+        Scanner nhap = new Scanner(System.in);
+        System.out.println("Chuong trinh quan ly tai lieu!");
+        int lc;
+        do{
+            System.out.println("====MENU====");
+            System.out.println("1.Nhap them tai lieu.");
+            System.out.println("2.In ra danh sach tai lieu");
+            System.out.println("3.Thoat Chuong trinh!");
+            System.out.print("NHap lua chon cua ban:");
+            lc = nhap.nextInt();
+            switch (lc) {
+                case 1:
+                    ql.nhap();
+                    break;
+                case 2:
+                ql.in();
+                break;
+                case 3:
+                System.out.println("Thoat chuong trinh! , cam on da su dung");
+                break;
+                default:
+                System.out.println("Lua chon khong hop le! Vui long chon 1-4.");
+                    break;
+            }
+        }while(lc != 3);
+        nhap.close();
+    }
+}
