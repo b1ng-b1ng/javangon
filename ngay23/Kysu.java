@@ -13,12 +13,15 @@ public class Kysu extends Canbo {
     }
     @Override
     public void nhap(Scanner sc){
+        super.nhap(sc);
         System.out.print("nhap nganh dao tao: ");
         this.daotao = sc.nextLine();
 
     }
     @Override
     public void in(){
-        System.out.println("nganh dao tao: " + daotao);
+        System.out.print("|Ky su");
+        super.in();
+        System.out.println("*Nganh dao tao: " + daotao);
     }
 }

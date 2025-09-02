@@ -17,8 +17,11 @@ public class Congnhan extends Canbo{
         System.out.print("nhap bac: ");
         this.rank = sc.nextLine();
     }
+
     @Override
     public void in(){
-        System.out.println("bac: "+ rank +"/7");
+        System.out.print("|Cong nhan");
+        super.in();
+        System.out.println("*Bac: "+ rank +"/7");
     }
 }

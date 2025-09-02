@@ -20,7 +20,6 @@ public class lab52 {
             
             luaChon = sc.nextInt();
             sc.nextLine(); // Đọc bỏ ký tự xuống dòng
-            
             switch (luaChon) {
                 case 1:
                     ql.nhap();

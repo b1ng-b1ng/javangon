@@ -27,9 +27,10 @@ public class Canbo {
         this.ten = sc.nextLine();
         System.out.print("nhap nam sinh: ");
         this.ns = sc.nextInt();
+        sc.nextLine();
         System.out.print("nhap gioi tinh: " );
         this.sex = sc.nextLine();
-        System.out.println("nhap dia chi: ");
+        System.out.print("nhap dia chi: ");
         this.address = sc.nextLine();
     }
     public Canbo(){

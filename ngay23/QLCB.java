@@ -15,14 +15,15 @@ public class QLCB {
         boolean tim = false;
         for (Canbo canbo : ds) {
             if(canbo.getTen().trim().equalsIgnoreCase(name)){
-            System.out.println("Tim thay: "+"|Ten: "+ canbo.getTen() + "|Ngay sinh: " + canbo.getNs() + "|Gioi tinh: " +canbo.getSex() +"|Dia chi: " + canbo.getAddress() +"|");
-                tim = true;
-            }
+            System.out.print("Tim thay:");
+            canbo.in();
+            tim = true;
         }
          if(!tim){
                 System.out.println("Khong tim thay Can bo: " + name);
             }
     }
+}
     public void nhap() {
         System.out.println("Chon loai Can bo: ");
         System.out.println("1.Cong nhan");
@@ -32,15 +33,6 @@ public class QLCB {
         System.out.print("nhap lua chon cua ban:");
         lc = sc.nextInt();
         sc.nextLine();
-        System.out.print("nhap ten: ");
-        String ten = sc.nextLine();
-        System.out.print("nhap nam sinh:");
-        int ns = sc.nextInt();
-        sc.nextLine();
-        System.out.print("nhap gioi tinh:");
-        String sex = sc.nextLine();
-        System.out.print("nhap dia chi:");
-        String address = sc.nextLine();
         Canbo cb = null;
 switch (lc) {
     case 1: cb = new Congnhan(); break;
@@ -50,10 +42,8 @@ switch (lc) {
     System.out.println("Lua chon khong hop le!");
     return;
 }
-    if(cb != null){
-        cb.nhap(sc);
-        ds.add(cb);
-    }
+ cb.nhap(sc);
+ds.add(cb);
 }
     public void inds(){
         if(ds.isEmpty()){
@@ -62,7 +52,8 @@ switch (lc) {
         System.out.println("Danh sach can bo");
         for (int i = 0; i < ds.size(); i++) {
             Canbo cb = ds.get(i);
-            System.out.println((i+1)+". " + cb);
+            System.out.println((i+1)+". ");
+            cb.in();
         }
     }
 }

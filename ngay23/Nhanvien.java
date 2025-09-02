@@ -13,12 +13,14 @@ public class Nhanvien extends Canbo{
     }
     @Override
     public void nhap(Scanner sc){
+        super.nhap(sc);
         System.out.print("nhap nganh:");
         this.cv = sc.nextLine();
     }
     @Override
     public void in(){
+        System.out.print("|Nhan vien");
         super.in();
-        System.out.println("nganh: " + cv);
+        System.out.println("*Nganh: " + cv);
     }
 }
