@@ -13,6 +13,29 @@ public class qlySach {
         sc = new Scanner(System.in);
         ds = new ArrayList<>();
     }
+    public void find(int loai){
+        for (tailieu tailieu : ds) {
+            switch (loai) {
+                case 1:
+                if(tailieu instanceof sach){
+                    tailieu.in();
+                    break;
+                }
+                case 2:
+                 if(tailieu instanceof sach){
+                    tailieu.in();
+                    break;
+                }
+                case 3:
+                 if(tailieu instanceof sach){
+                    tailieu.in();
+                    break;
+                }
+                default:
+                    break;
+            }
+        }
+    }
     public void nhap(){
         System.out.println("Ban muon them tai lieu nao?");
         System.out.println("1.Sach");
