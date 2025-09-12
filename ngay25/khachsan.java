@@ -1,42 +1,30 @@
 package ngay25;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
-public class khachsan extends nguoi {
-    private int Songaytro;
-    private String Loaiphong;
-    private int gia;
-    private ArrayList<khachsan> ds = new ArrayList<>();
-    private Scanner sc;
-    public khachsan(){
-        ArrayList ds = new ArrayList<>();
-        sc = new Scanner(System.in);
+public class KhachSan {
+    private nguoi ng;       
+    private int songaytro;
+    private String loaiphong;
+    private double giaphong;
+    public KhachSan() {
+        ng = new nguoi();
     }
-    public khachsan(String name, int age, int ns, String cccd, int songaytro, String loaiphong, int gia) {
-        super(name, age, ns, cccd);
-        Songaytro = songaytro;
-        Loaiphong = loaiphong;
-        this.gia = gia;
+      public void nhap(Scanner sc) {
+        System.out.println("---Nhap thong tin khach tro ---");
+        ng.nhap(sc);
+        System.out.print("Nhap so ngay tro: ");
+        songaytro = Integer.parseInt(sc.nextLine());
+        System.out.print("Nhap loai phong: ");
+        loaiphong = sc.nextLine();
+        System.out.print("Nhap gia phong: ");
+        giaphong = Double.parseDouble(sc.nextLine());
     }
-    @Override
-    public void nhap(Scanner sc){
-        super.nhap(sc);
-        System.out.println("Nhap so ngay tro:");
-        this.Songaytro = sc.nextInt();
-        sc.nextLine();
-        System.out.println("Nhap Loai phong:");
-        this.Loaiphong = sc.nextLine();
-        System.out.println("Nhap gia");
-        this.gia = sc.nextInt();
-        sc.nextLine();
-    }
-    @Override
-    public void in(){
-        super.in();
-        System.out.println("So ngay tro:"+ Songaytro +"|loai phong:" +Loaiphong +"|Gia phong:" + gia);
-    }
-    public static void main(String[] args) {
-        
+      public void hienthi() {
+        System.out.println("===== Thong tin khach tro =====");
+        ng.hienthi();
+        System.out.println("So ngay tro: " + songaytro +
+                " | Loai phong: " + loaiphong +
+                " | Gia phong: " + giaphong);
     }
 }
