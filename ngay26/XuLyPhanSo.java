@@ -4,55 +4,51 @@ import java.util.Scanner;
 
 public class XuLyPhanSo {
     private Scanner scanner;
-    
+
     public XuLyPhanSo() {
         this.scanner = new Scanner(System.in);
     }
-    
+
     /**
-     * Nhập danh sách phân số từ người dùng
-     * @return Mảng các phân số
+     * Nhập đúng 2 phân số từ người dùng
+     * @return Mảng chứa 2 phân số
      */
-public PhanSo[] nhapDanhSachPhanSo() {
-        System.out.print("Nhap so luong phan so: ");
-        int n = scanner.nextInt();
-        PhanSo[] danhSachPhanSo = new PhanSo[n];
-        
-        for (int i = 0; i < n; i++) {
+    public PhanSo[] nhapHaiPhanSo() {
+        PhanSo[] ds = new PhanSo[2];
+        for (int i = 0; i < 2; i++) {
             System.out.println("Nhap phan so thu " + (i + 1) + ":");
             System.out.print("  Tu so: ");
             int tu = scanner.nextInt();
             System.out.print("  Mau so: ");
             int mau = scanner.nextInt();
-            danhSachPhanSo[i] = new PhanSo(tu, mau);
+            ds[i] = new PhanSo(tu, mau);
         }
-        
-        return danhSachPhanSo;
+        return ds;
     }
-    
+
     /**
-     * Hiển thị dạng tối giản của các phân số
-     * @param danhSachPhanSo Mảng các phân số cần hiển thị
+     * Hiển thị dạng tối giản của 2 phân số
+     * @param ds Mảng chứa 2 phân số
      */
-    public void hienThiDangToiGian(PhanSo[] danhSachPhanSo) {
-        System.out.println("\nDang toi gian cua cac phan so:");
-        for (int i = 0; i < danhSachPhanSo.length; i++) {
-            PhanSo psToiGian = danhSachPhanSo[i].toiGian();
-            System.out.println("Phan so " + (i + 1) + ": " + danhSachPhanSo[i] + " -> " + psToiGian);
+    public void hienThiDangToiGian(PhanSo[] ds) {
+        System.out.println("\nDang toi gian cua hai phan so:");
+        for (int i = 0; i < ds.length; i++) {
+            PhanSo psToiGian = ds[i].toiGian();
+            System.out.println("Phan so " + (i + 1) + ": " + ds[i] + " -> " + psToiGian);
         }
     }
-    
+
     /**
-     * Thực hiện và hiển thị các phép toán giữa các phân số
-     * @param danhSachPhanSo Mảng các phân số
+     * Thực hiện cộng, trừ, nhân, chia giữa 2 phân số
+    Mảng chứa 2 phân số
      */
-    public void thucHienPhepToan(PhanSo[] danhSachPhanSo) {
-        if (danhSachPhanSo.length >= 2) {
-            System.out.println("\n===  cac phep toan  ===");
-            
-            PhanSo ps1 = danhSachPhanSo[0];
-            PhanSo ps2 = danhSachPhanSo[1];
-            
+    public void thucHienPhepToan(PhanSo[] ds) {
+        if (ds.length == 2) {
+            System.out.println("\n===  Cac phep toan giua hai phan so ===");
+
+            PhanSo ps1 = ds[0];
+            PhanSo ps2 = ds[1];
+
             System.out.println("Phan so 1: " + ps1);
             System.out.println("Phan so 2: " + ps2);
             System.out.println("Cong: " + ps1.cong(ps2));
@@ -61,7 +57,7 @@ public PhanSo[] nhapDanhSachPhanSo() {
             System.out.println("Chia: " + ps1.chia(ps2));
         }
     }
-    
+
     /**
      * Đóng scanner
      */

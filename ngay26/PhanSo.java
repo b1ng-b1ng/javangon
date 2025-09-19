@@ -16,8 +16,18 @@ public class PhanSo {
      * Constructor với tham số
      */
     public PhanSo(int tuSo, int mauSo) {
+     try {
+        if(mauSo ==0){
+            throw new IllegalArgumentException("Mau so khong duoc bang 0!");
+
+        }
         this.tuSo = tuSo;
-        this.mauSo = (mauSo != 0) ? mauSo : 1; // Tránh mẫu số bằng 0
+        this.mauSo = mauSo;
+     } catch (Exception e) {
+        System.out.println("ERROR " + e.getMessage());
+      this.tuSo =0;
+      this.mauSo =1;
+     }
     }
     
     // Getter và Setter
@@ -33,9 +43,18 @@ public class PhanSo {
         return mauSo;
     }
     
-    public void setMauSo(int mauSo) {
-        this.mauSo = (mauSo != 0) ? mauSo : 1; // Tránh mẫu số bằng 0
+   public void setMauSo(int mauSo) {
+    try {
+        if (mauSo == 0) {
+            throw new IllegalArgumentException("Mau so khong duoc bang 0!");
+        }
+        this.mauSo = mauSo;
+    } catch (IllegalArgumentException e) {
+        System.out.println("WARNING: " + e.getMessage() + " Tu dong gan = 1.");
+        this.mauSo = 1;
     }
+}
+
     
     /**
      * Tìm ước chung lớn nhất của hai số bằng thuật toán Euclid
@@ -51,18 +70,10 @@ public class PhanSo {
         return a;
     }
     
-    /**
-     * Kiểm tra phân số có phải là tối giản hay không
-     * @return true nếu phân số tối giản, false nếu ngược lại
-     */
     public boolean isToiGian() {
         return UCLN(tuSo, mauSo) == 1;
     }
     
-    /**
-     * Rút gọn phân số về dạng tối giản
-     * @return Phân số đã được rút gọn
-     */
     public PhanSo toiGian() {
         int u = UCLN(tuSo, mauSo);
         int tuMoi = tuSo / u;
@@ -77,54 +88,44 @@ public class PhanSo {
         return new PhanSo(tuMoi, mauMoi);
     }
     
-    /**
-     * Cộng hai phân số
-     * @param other Phân số thứ hai
-     * @return Kết quả phép cộng đã được rút gọn
-     */
+  
     public PhanSo cong(PhanSo other) {
         int tuMoi = this.tuSo * other.mauSo + other.tuSo * this.mauSo;
         int mauMoi = this.mauSo * other.mauSo;
         return new PhanSo(tuMoi, mauMoi).toiGian();
     }
     
-    /**
-     * Trừ hai phân số
-     * @param other Phân số thứ hai
-     * @return Kết quả phép trừ đã được rút gọn
-     */
+  
     public PhanSo tru(PhanSo other) {
         int tuMoi = this.tuSo * other.mauSo - other.tuSo * this.mauSo;
         int mauMoi = this.mauSo * other.mauSo;
         return new PhanSo(tuMoi, mauMoi).toiGian();
     }
     
-    /**
-     * Nhân hai phân số
-     * @param other Phân số thứ hai
-     * @return Kết quả phép nhân đã được rút gọn
-     */
+    
     public PhanSo nhan(PhanSo other) {
         int tuMoi = this.tuSo * other.tuSo;
         int mauMoi = this.mauSo * other.mauSo;
         return new PhanSo(tuMoi, mauMoi).toiGian();
     }
     
-    /**
-     * Chia hai phân số
-     * @param other Phân số thứ hai
-     * @return Kết quả phép chia đã được rút gọn
-     */
+ 
     public PhanSo chia(PhanSo other) {
+    try {
+        if (other.tuSo == 0) {
+            throw new ArithmeticException("Khong the chia cho phan so co tu so = 0!");
+        }
         int tuMoi = this.tuSo * other.mauSo;
         int mauMoi = this.mauSo * other.tuSo;
         return new PhanSo(tuMoi, mauMoi).toiGian();
+    } catch (ArithmeticException e) {
+        System.out.println("ERROR: " + e.getMessage());
+        return new PhanSo(0, 1); // trả về 0/1 để tránh lỗi
     }
+}
+
     
-    /**
-     * Hiển thị phân số dưới dạng chuỗi
-     * @return Chuỗi biểu diễn phân số
-     */
+  
     @Override
     public String toString() {
         return tuSo + "/" + mauSo;

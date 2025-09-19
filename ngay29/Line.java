@@ -22,6 +22,6 @@ public class Line extends Shape {
     @Override
     public void setColor(int color){
         this.color = color;
-        System.out.println("da ve duong thang voi mau:" + color);
+        System.out.println("Da ve duong thang voi mau:" + color);
     }
 }
