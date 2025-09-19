@@ -9,7 +9,7 @@ public class Line extends Shape {
     }
     @Override
     public void rotate(int angle){
-        System.out.println("Xoay duong thang " + angle + "do");
+        System.out.println("Xoay duong thang " + angle + " do");
     }
     @Override
     public void moveLeft(int point){
