@@ -1,4 +1,5 @@
 package ngay27;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Thisinh {
@@ -23,8 +24,13 @@ public class Thisinh {
         hoten = sc.nextLine();
         System.out.print("Nhap dia chi: ");
         diachi = sc.nextLine();
-        System.out.print("Nhap muc uu tien: ");
-        uutien = Integer.parseInt(sc.nextLine());
+        try {
+            System.out.print("Nhap muc uu tien: ");
+            uutien = sc.nextInt();
+            sc.nextLine();
+        } catch (InputMismatchException nfe) {
+            System.out.println("Vui long nhap so");
+        }
     }
 
     public void hienthi() {

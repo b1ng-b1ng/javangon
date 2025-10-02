@@ -45,10 +45,8 @@ public class XuLyPhanSo {
     public void thucHienPhepToan(PhanSo[] ds) {
         if (ds.length == 2) {
             System.out.println("\n===  Cac phep toan giua hai phan so ===");
-
             PhanSo ps1 = ds[0];
             PhanSo ps2 = ds[1];
-
             System.out.println("Phan so 1: " + ps1);
             System.out.println("Phan so 2: " + ps2);
             System.out.println("Cong: " + ps1.cong(ps2));
